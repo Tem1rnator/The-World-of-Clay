@@ -1,4 +1,4 @@
-extends Node
+extends Button
 class_name button
 
 signal Button_up
