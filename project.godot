@@ -8,16 +8,21 @@
 
 config_version=4
 
-_global_script_classes=[  ]
+_global_script_classes=[ {
+"base": "Node",
+"class": "button",
+"language": "GDScript",
+"path": "res://src/Button_Class.gd"
+} ]
 _global_script_class_icons={
-
+"button": ""
 }
 
 [application]
 
 config/name="The World of Clay"
-run/main_scene="res://Player.tscn"
-config/icon="res://icon.png"
+run/main_scene="res://src/Player.tscn"
+config/icon="res://src/images/icon.png"
 
 [autoload]
 
@@ -25,6 +30,11 @@ PluginSettings="*res://addons/github-integration/scripts/PluginSettings.gd"
 IconLoaderGithub="*res://addons/github-integration/scripts/IconLoaderGithub.gd"
 RestHandler="*res://addons/github-integration/scenes/RestHandler.tscn"
 UserData="*res://addons/github-integration/scripts/user_data.gd"
+
+[display]
+
+window/size/width=1280
+window/size/height=720
 
 [editor_plugins]
 
@@ -61,6 +71,12 @@ ui_down={
  ]
 }
 
+[layer_names]
+
+2d_physics/layer_1="Player"
+2d_physics/layer_2="World"
+
 [rendering]
 
-environment/default_environment="res://default_env.tres"
+environment/default_clear_color=Color( 0.239216, 0.345098, 0.392157, 1 )
+environment/default_environment="res://src/images/default_env.tres"
