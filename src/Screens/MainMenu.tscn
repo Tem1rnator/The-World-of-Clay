@@ -1,15 +1,11 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=3 format=2]
 
-[ext_resource path="res://src/images/Background.png" type="Texture" id=1]
-[ext_resource path="res://src/images/20200908_211406.png" type="Texture" id=2]
-[ext_resource path="res://src/images/ui_theme.tres" type="Theme" id=3]
 [ext_resource path="res://src/UserInterface/Buttons/Change_Scene_Button.tscn" type="PackedScene" id=4]
 [ext_resource path="res://src/UserInterface/Buttons/Exit_Button.tscn" type="PackedScene" id=5]
 
 [node name="MainMenu" type="Control"]
 anchor_right = 1.0
 anchor_bottom = 1.0
-theme = ExtResource( 3 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -18,7 +14,6 @@ __meta__ = {
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_bottom = 1.0
-texture = ExtResource( 1 )
 expand = true
 __meta__ = {
 "_edit_use_anchors_": false
@@ -30,7 +25,6 @@ anchor_right = 0.5
 margin_left = -447.0
 margin_right = 447.0
 margin_bottom = 275.0
-texture = ExtResource( 2 )
 expand = true
 __meta__ = {
 "_edit_use_anchors_": false
@@ -50,12 +44,9 @@ __meta__ = {
 }
 
 [node name="Change_scene_Button" parent="Buttons" instance=ExtResource( 4 )]
-margin_bottom = 57.0
 next_scene_path = "res://src/Levels/Room_Clay_Kiln.tscn"
 
 [node name="Exit_Button" parent="Buttons" instance=ExtResource( 5 )]
-margin_top = 61.0
-margin_bottom = 119.0
 
 [node name="RTX_Button" type="CheckButton" parent="."]
 anchor_top = 1.0
