@@ -26,6 +26,7 @@ func find_current_tab(tab_name: String) -> int:
 	return count
 
 func set_current_tab(value: int) -> void:
+	#print(tabs)
 	tabs[current_tab].get_child(0).visible = false
 	valid = false
 	#tabs_control[current_tab] = true
@@ -38,7 +39,7 @@ func set_current_tab(value: int) -> void:
 	tabs[current_tab].pressed = true
 	tabs[current_tab].get_child(0).visible = true
 
-func _process(_delta: float) -> void:
+"""func _process(_delta: float) -> void:
 	if Engine.editor_hint:
 		if get_child_count() > current_child_count:
 			
@@ -47,13 +48,16 @@ func _process(_delta: float) -> void:
 			var new_children = []
 			var new_child_count = updated_child_count - current_child_count
 			
+			
 			for i in range(updated_child_count):
 				var found := false
 				for j in range(updated_child_count):
+					print(j)
 					if updated_children[i] == updated_children[j] and i != j:
 						found = true
 				if found:
 					new_children.append(updated_children[i])
+					print("lol")
 			
 			for i in range(new_child_count):
 				#If "current child_count" < 0, throw an error
@@ -62,8 +66,7 @@ func _process(_delta: float) -> void:
 				new_children[i].toggle_mode = true
 				new_children[i].connect("toggled", self, "on_tab_toggled", [new_children[i].name])
 				new_child_count -= 1
-			
-			tabs = updated_children
+			tabs = updated_children"""
 
 
 func _on_tab_toggled(_button_pressed: bool, tab_name: String) -> void:

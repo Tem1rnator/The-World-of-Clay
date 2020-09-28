@@ -1,10 +1,10 @@
 [gd_scene load_steps=7 format=2]
 
-[ext_resource path="res://src/Interact_Window.gd" type="Script" id=1]
-[ext_resource path="res://src/Button_Class.gd" type="Script" id=2]
+[ext_resource path="res://src/UserInterface/Interact_Window.gd" type="Script" id=1]
+[ext_resource path="res://src/UserInterface/Buttons/Hide_Button.gd" type="Script" id=2]
 [ext_resource path="res://src/images/gingerbread_man (2).png" type="Texture" id=3]
 [ext_resource path="res://src/images/icon.png" type="Texture" id=4]
-[ext_resource path="res://src/Tabs_cont.gd" type="Script" id=5]
+[ext_resource path="res://src/UserInterface/Tabs_cont.gd" type="Script" id=5]
 
 [sub_resource type="Animation" id=1]
 resource_name = "Hide"

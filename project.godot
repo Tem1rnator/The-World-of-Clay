@@ -10,18 +10,18 @@ config_version=4
 
 _global_script_classes=[ {
 "base": "Button",
-"class": "button",
+"class": "Button_Class",
 "language": "GDScript",
-"path": "res://src/Button_Class.gd"
+"path": "res://src/UserInterface/Buttons/Button_Class.gd"
 } ]
 _global_script_class_icons={
-"button": ""
+"Button_Class": ""
 }
 
 [application]
 
 config/name="The World of Clay"
-run/main_scene="res://src/Player.tscn"
+run/main_scene="res://src/Screens/MainMenu.tscn"
 config/icon="res://src/images/icon.png"
 
 [autoload]
