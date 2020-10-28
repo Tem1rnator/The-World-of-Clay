@@ -1,0 +1,160 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://src/UserInterface/Interact_Window.gd" type="Script" id=1]
+[ext_resource path="res://src/UserInterface/Buttons/Hide_Button.gd" type="Script" id=2]
+[ext_resource path="res://src/images/gingerbread_man (2).png" type="Texture" id=3]
+[ext_resource path="res://src/images/icon.png" type="Texture" id=4]
+[ext_resource path="res://src/UserInterface/Tabs_cont.gd" type="Script" id=5]
+
+[sub_resource type="Animation" id=1]
+resource_name = "Hide"
+length = 0.25
+step = 0.05
+tracks/0/type = "bezier"
+tracks/0/path = NodePath("Panel:rect_position:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"points": PoolRealArray( 5, -0.25, 0, 0.25, 0, 5, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0, 0.25 )
+}
+tracks/1/type = "bezier"
+tracks/1/path = NodePath("Panel:rect_position:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"points": PoolRealArray( 389, -0.25, 0, 0.25, 0, 655, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0, 0.25 )
+}
+tracks/2/type = "bezier"
+tracks/2/path = NodePath("Hide_Button:rect_position:x")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"points": PoolRealArray( 969, -0.25, 0, 0.25, 0, 969, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0, 0.25 )
+}
+tracks/3/type = "bezier"
+tracks/3/path = NodePath("Hide_Button:rect_position:y")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"points": PoolRealArray( 365, -0.25, 0, 0.25, 0, 574, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0, 0.25 )
+}
+
+[node name="Interact_Window" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="Panel" type="Panel" parent="."]
+margin_left = 5.0
+margin_top = 389.0
+margin_right = 1019.0
+margin_bottom = 595.001
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Window" type="VBoxContainer" parent="Panel"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 5.0
+margin_top = 5.0
+margin_right = -5.0
+margin_bottom = -1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Panel" type="Panel" parent="Panel/Window"]
+margin_right = 1004.0
+margin_bottom = 176.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Tabs_cont" type="HBoxContainer" parent="Panel/Window"]
+margin_top = 180.0
+margin_right = 1004.0
+margin_bottom = 200.0
+rect_min_size = Vector2( 0, 20 )
+size_flags_horizontal = 7
+size_flags_vertical = 9
+custom_constants/separation = 0
+alignment = 1
+script = ExtResource( 5 )
+
+[node name="Inventory" type="Button" parent="Panel/Window/Tabs_cont"]
+margin_left = 439.0
+margin_right = 512.0
+margin_bottom = 20.0
+toggle_mode = true
+pressed = true
+text = "Inventory"
+
+[node name="Sprite" type="Sprite" parent="Panel/Window/Tabs_cont/Inventory"]
+position = Vector2( -289, -99.9994 )
+rotation = 0.785397
+scale = Vector2( 1.71875, 1.71875 )
+texture = ExtResource( 4 )
+offset = Vector2( -14.8107, 28.7985 )
+
+[node name="Dialog" type="Button" parent="Panel/Window/Tabs_cont"]
+margin_left = 512.0
+margin_right = 564.0
+margin_bottom = 20.0
+toggle_mode = true
+text = "Dialog"
+expand_icon = true
+
+[node name="Panel" type="Panel" parent="Panel/Window/Tabs_cont/Dialog"]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 208.0
+margin_top = -165.0
+margin_right = 394.0
+margin_bottom = -61.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="gingerbread_man (2)" type="Sprite" parent="Panel/Window/Tabs_cont/Dialog/Panel"]
+position = Vector2( 98.6152, 66.4819 )
+scale = Vector2( 0.0789578, 0.0789578 )
+texture = ExtResource( 3 )
+
+[node name="Hide_Button" type="Button" parent="."]
+anchor_left = 1.0
+anchor_right = 1.0
+margin_left = -54.9999
+margin_top = 365.0
+margin_right = -4.99994
+margin_bottom = 389.0
+text = "Hide"
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+anims/Hide = SubResource( 1 )
+[connection signal="renamed" from="Panel/Window/Tabs_cont/Inventory" to="Panel/Window/Tabs_cont" method="_on_tab_renamed"]
+[connection signal="toggled" from="Panel/Window/Tabs_cont/Inventory" to="Panel/Window/Tabs_cont" method="_on_tab_toggled" binds= [ "Inventory" ]]
+[connection signal="toggled" from="Panel/Window/Tabs_cont/Dialog" to="Panel/Window/Tabs_cont" method="_on_tab_toggled" binds= [ "Dialog" ]]
+[connection signal="Button_up" from="Hide_Button" to="." method="_on_Hide_Button_Button_up"]
+[connection signal="button_down" from="Hide_Button" to="Hide_Button" method="button_down"]
+[connection signal="button_up" from="Hide_Button" to="Hide_Button" method="button_up"]
