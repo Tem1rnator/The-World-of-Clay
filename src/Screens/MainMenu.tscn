@@ -1,12 +1,12 @@
 [gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://src/images/Star - 6962.webm" type="VideoStream" id=1]
-[ext_resource path="res://Screens/MainMenu.gd" type="Script" id=2]
-[ext_resource path="res://UserInterface/Button_2.tscn" type="PackedScene" id=3]
-[ext_resource path="res://UserInterface/CS_Button.tscn" type="PackedScene" id=4]
+[ext_resource path="res://src/Screens/MainMenu.gd" type="Script" id=2]
+[ext_resource path="res://src/UserInterface/Buttons/Exit_Button.tscn" type="PackedScene" id=3]
+[ext_resource path="res://src/UserInterface/Buttons/Change_Scene_Button.tscn" type="PackedScene" id=4]
 [ext_resource path="res://src/images/ui_theme.tres" type="Theme" id=5]
 [ext_resource path="res://src/images/20200908_211406.png" type="Texture" id=6]
-[ext_resource path="res://src/VideoPlayer.gd" type="Script" id=7]
+[ext_resource path="res://src/UserInterface/VideoPlayer.gd" type="Script" id=7]
 
 [node name="MainMenu" type="Control"]
 anchor_right = 1.0
@@ -38,7 +38,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="CheckButton" type="CheckButton" parent="."]
+[node name="rtx_CheckButton" type="CheckButton" parent="."]
 anchor_top = 1.0
 anchor_bottom = 1.0
 margin_left = 52.0059
@@ -50,52 +50,51 @@ __meta__ = {
 "_edit_use_anchors_": true
 }
 
-[node name="RT" type="Label" parent="CheckButton"]
+[node name="rtx" type="Label" parent="rtx_CheckButton"]
 anchor_top = 1.0
 anchor_bottom = 1.0
 margin_left = -36.0407
 margin_top = -39.009
 margin_right = 3.95932
-margin_bottom = -8.00903
+margin_bottom = -8.009
 text = "rtx"
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="Buttons" type="VBoxContainer" parent="."]
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
+anchor_left = 0.51552
+anchor_top = 0.588289
+anchor_right = 0.51552
+anchor_bottom = 0.588289
 margin_left = -108.74
 margin_top = -53.4179
-margin_right = -27.7401
-margin_bottom = 24.5821
-rect_scale = Vector2( 2.54312, 2.54312 )
+margin_right = 43.84
+margin_bottom = 144.936
 __meta__ = {
 "_edit_use_anchors_": true
 }
 
-[node name="Button_1" parent="Buttons" instance=ExtResource( 4 )]
-margin_right = 80.0
-margin_bottom = 37.0
+[node name="Play_Button" parent="Buttons" instance=ExtResource( 4 )]
+margin_right = 152.0
+margin_bottom = 97.0
 mouse_default_cursor_shape = 2
 text = "PLAY"
 flat = true
 expand_icon = true
-next_scene_path = "res://src/Interact_Window.tscn"
+next_scene_path = "res://src/Levels/Room_Clay_Kiln.tscn"
 
-[node name="Button_2" parent="Buttons" instance=ExtResource( 3 )]
-margin_top = 41.0
-margin_right = 80.0
-margin_bottom = 78.0
+[node name="Exit_Button" parent="Buttons" instance=ExtResource( 3 )]
+margin_top = 101.0
+margin_right = 152.0
+margin_bottom = 198.0
 rect_clip_content = true
 mouse_default_cursor_shape = 2
 text = "EXIT"
 flat = true
 expand_icon = true
 
-[node name="Version game" type="Label" parent="."]
+[node name="Game_version" type="Label" parent="."]
 anchor_left = 1.0
 anchor_top = 1.0
 anchor_right = 1.0
@@ -109,4 +108,8 @@ text = "Alpha 1.0
 __meta__ = {
 "_edit_use_anchors_": true
 }
+
+[node name="VideoPlayer2" type="VideoPlayer" parent="."]
+margin_right = 40.0
+margin_bottom = 40.0
 [connection signal="finished" from="VideoPlayer" to="VideoPlayer" method="_on_VideoPlayer_finished"]
