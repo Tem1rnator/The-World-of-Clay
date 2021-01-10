@@ -1,0 +1,71 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://src/Actors/Player/Player.tscn" type="PackedScene" id=1]
+[ext_resource path="res://src/Assets/gingerbread_man (2).png" type="Texture" id=2]
+[ext_resource path="res://src/Levels/TileMap.gd" type="Script" id=3]
+[ext_resource path="res://src/Assets/tilset_02.png" type="Texture" id=4]
+
+[sub_resource type="TileSet" id=1]
+0/name = "tilset_02.png 0"
+0/texture = ExtResource( 4 )
+0/tex_offset = Vector2( 0, 0 )
+0/modulate = Color( 1, 1, 1, 1 )
+0/region = Rect2( 160, 32, 64, 32 )
+0/tile_mode = 0
+0/occluder_offset = Vector2( 0, 0 )
+0/navigation_offset = Vector2( 0, 0 )
+0/shape_offset = Vector2( 0, 0 )
+0/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+0/shape_one_way = false
+0/shape_one_way_margin = 0.0
+0/shapes = [  ]
+0/z_index = 0
+
+[sub_resource type="TileSet" id=2]
+0/name = "tilset_02.png 0"
+0/texture = ExtResource( 4 )
+0/tex_offset = Vector2( 0, 0 )
+0/modulate = Color( 1, 1, 1, 1 )
+0/region = Rect2( 224, 32, 32, 16 )
+0/tile_mode = 0
+0/occluder_offset = Vector2( 0, 0 )
+0/navigation_offset = Vector2( 0, 0 )
+0/shape_offset = Vector2( 0, 0 )
+0/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+0/shape_one_way = false
+0/shape_one_way_margin = 0.0
+0/shapes = [  ]
+0/z_index = 0
+
+[node name="Tutorial_Scene" type="Node2D"]
+__meta__ = {
+"_editor_description_": "Это может называться и Tutorial Scene, и Sample Scene"
+}
+
+[node name="Player" parent="." instance=ExtResource( 1 )]
+position = Vector2( 516.041, 295.19 )
+
+[node name="gingerbread_man (2)" type="Sprite" parent="."]
+position = Vector2( 853.065, 376.13 )
+scale = Vector2( 0.116139, 0.116139 )
+texture = ExtResource( 2 )
+
+[node name="TileMap" type="TileMap" parent="."]
+visible = false
+mode = 1
+tile_set = SubResource( 1 )
+cell_size = Vector2( 64, 32 )
+format = 1
+tile_data = PoolIntArray( 65548, 1610612736, 0, 65549, 1610612736, 0, 131083, 1610612736, 0, 131084, 1610612736, 0, 131085, 1610612736, 0, 131086, 1610612736, 0, 196620, 1610612736, 0, 196621, 1610612736, 0, 196623, 1610612736, 0, 262157, 1610612736, 0, 262158, 1610612736, 0, 327694, 1610612736, 0 )
+script = ExtResource( 3 )
+
+[node name="Walls" type="TileMap" parent="."]
+visible = false
+modulate = Color( 0.831373, 0.027451, 0.027451, 1 )
+self_modulate = Color( 0.513726, 0.101961, 0.101961, 1 )
+mode = 1
+tile_set = SubResource( 2 )
+cell_size = Vector2( 32, 16 )
+format = 1
+tile_data = PoolIntArray( 26, 1610612736, 0, 65561, 1610612736, 0, 65563, 1610612736, 0, 131096, 1610612736, 0, 131100, 1610612736, 0, 196631, 1610612736, 0, 196637, 1610612736, 0, 262166, 1610612736, 0, 262174, 1610612736, 0, 327701, 1610612736, 0, 327711, 1610612736, 0, 393238, 1610612736, 0, 393248, 1610612736, 0, 458775, 1610612736, 0, 458785, 1610612736, 0, 524312, 1610612736, 0, 524320, 1610612736, 0, 589849, 1610612736, 0, 589855, 1610612736, 0, 655386, 1610612736, 0, 655390, 1610612736, 0, 720923, 1610612736, 0, 720925, 1610612736, 0, 786460, 1610612736, 0 )
+script = ExtResource( 3 )

@@ -22,7 +22,7 @@ _global_script_class_icons={
 
 config/name="The World of Clay"
 run/main_scene="res://src/Screens/MainMenu.tscn"
-config/icon="res://src/images/icon.png"
+config/icon="res://src/Actors/Assets_Player/icon.png"
 
 [autoload]
 
@@ -37,6 +37,12 @@ enabled=PoolStringArray(  )
 
 [input]
 
+ui_select={
+"deadzone": 0.5,
+"events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":32,"unicode":0,"echo":false,"script":null)
+, Object(InputEventJoypadButton,"resource_local_to_scene":false,"resource_name":"","device":0,"button_index":3,"pressure":0.0,"pressed":false,"script":null)
+ ]
+}
 ui_left={
 "deadzone": 0.5,
 "events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":16777231,"unicode":0,"echo":false,"script":null)
@@ -73,4 +79,4 @@ ui_down={
 
 [rendering]
 
-environment/default_environment="res://src/images/default_env.tres"
+environment/default_environment="res://src/Assets/Fonts/default_env.tres"

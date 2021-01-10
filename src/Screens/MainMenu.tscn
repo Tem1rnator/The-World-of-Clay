@@ -1,7 +1,17 @@
 [gd_scene load_steps=3 format=2]
 
+<<<<<<< Updated upstream
 [ext_resource path="res://src/UserInterface/Buttons/Change_Scene_Button.tscn" type="PackedScene" id=4]
 [ext_resource path="res://src/UserInterface/Buttons/Exit_Button.tscn" type="PackedScene" id=5]
+=======
+[ext_resource path="res://src/Assets/Star - 6962.webm" type="VideoStream" id=1]
+[ext_resource path="res://src/Screens/MainMenu.gd" type="Script" id=2]
+[ext_resource path="res://src/UserInterface/Buttons/Exit_Button.tscn" type="PackedScene" id=3]
+[ext_resource path="res://src/UserInterface/Buttons/Change_Scene_Button.tscn" type="PackedScene" id=4]
+[ext_resource path="res://src/Assets/Fonts/ui_theme.tres" type="Theme" id=5]
+[ext_resource path="res://src/Assets/20200908_211406.png" type="Texture" id=6]
+[ext_resource path="res://src/UserInterface/VideoPlayer.gd" type="Script" id=7]
+>>>>>>> Stashed changes
 
 [node name="MainMenu" type="Control"]
 anchor_right = 1.0
