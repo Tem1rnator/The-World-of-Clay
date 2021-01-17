@@ -1,12 +1,18 @@
 extends Position2D
 
-onready var player = $".."
+onready var Player = $".."
+onready var Camera_Offset = $"CameraOffset"
+var pivot_offset = 154   #We can make it Vector2
 
 func _ready():
 	update_pivot_angle()
 
 func _physics_process(delta):
-	update_pivot_angle()
+	if Player.dir == Vector2.ZERO:
+		Camera_Offset.position = Vector2.ZERO
+	else:
+		update_pivot_angle()
 
 func update_pivot_angle():
-	rotation = player.dir.angle()
+	Camera_Offset.position = Vector2(pivot_offset, 0)
+	rotation = Player.dir.angle()

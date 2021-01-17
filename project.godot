@@ -21,8 +21,7 @@ _global_script_class_icons={
 [application]
 
 config/name="The World of Clay"
-run/main_scene="res://src/Screens/MainMenu.tscn"
-config/icon="res://src/Actors/Assets_Player/icon.png"
+config/icon="res://src/Actors/Player/Assets_Player/icon.png"
 
 [autoload]
 
@@ -76,6 +75,7 @@ ui_down={
 
 2d_physics/layer_1="Player"
 2d_physics/layer_2="World"
+2d_physics/layer_3="Interactables"
 
 [rendering]
 

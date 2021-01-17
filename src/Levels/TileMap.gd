@@ -1,7 +1,6 @@
 extends TileMap
 
 
-
 func _unhandled_input(event):   #It's here just for debugging. Remove when function isn't needed
 	if event is InputEventKey:
 		if event.pressed and event.scancode == KEY_SPACE:
@@ -11,4 +10,3 @@ func _unhandled_input(event):   #It's here just for debugging. Remove when funct
 			print(map_to_world(tile_index))
 			print(get_global_mouse_position())
 			print()
-

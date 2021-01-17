@@ -12,6 +12,7 @@ var change_directions = [true, true]
 var velocity := Vector2.ZERO
 var acceleration := 0.1
 var friction := 0.05
+var disable_movement := false
 
 func _physics_process(_delta: float) -> void:
 	input()
@@ -22,8 +23,9 @@ func _physics_process(_delta: float) -> void:
 		velocity = velocity.linear_interpolate(Vector2.ZERO, friction)
 	velocity = move_and_slide(velocity)
 
+
 func input() -> void:
-	#dir = Vector2.ZERO
+	#dir = Vector2.ZERO       #dir variable is being cleared already
 	for i in inputs:
 		if Input.is_action_pressed(i):
 			if inputs[i].x != 0:
@@ -60,3 +62,7 @@ func get_key_by_value(dict: Dictionary, value) -> String:
 			return i
 	return ""
 #Test
+
+
+func _on_Detection_body_entered(body):
+	print("Hi")    #I'll change to something else later
