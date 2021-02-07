@@ -5,10 +5,10 @@
 [ext_resource path="res://src/Actors/Player/Assets_Player/icon.png" type="Texture" id=3]
 [ext_resource path="res://src/Actors/Player/Pivot.gd" type="Script" id=4]
 
-[sub_resource type="RectangleShape2D" id=2]
+[sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 63.1863, 63.1746 )
 
-[sub_resource type="SpriteFrames" id=1]
+[sub_resource type="SpriteFrames" id=2]
 animations = [ {
 "frames": [ ExtResource( 3 ) ],
 "loop": true,
@@ -28,10 +28,10 @@ __meta__ = {
 
 [node name="Player_Collision" type="CollisionShape2D" parent="."]
 scale = Vector2( 0.5, 0.5 )
-shape = SubResource( 2 )
+shape = SubResource( 1 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
-frames = SubResource( 1 )
+frames = SubResource( 2 )
 animation = "idle"
 
 [node name="Detection" type="Area2D" parent="."]
@@ -62,6 +62,7 @@ smoothing_speed = 4.0
 editor_draw_drag_margin = true
 
 [node name="icon" type="Sprite" parent="Pivot/CameraOffset/Player_Camera"]
+visible = false
 scale = Vector2( 0.5, 0.5 )
 texture = ExtResource( 1 )
 __meta__ = {
