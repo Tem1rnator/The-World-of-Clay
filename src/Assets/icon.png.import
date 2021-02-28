@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/tilset_02.png-82d24b57cc40eb68a3701c12e66b7e43.stex"
+path="res://.import/icon.png-df304e81ff95ff821885b1d9789ee879.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://src/images/tilset_02.png"
-dest_files=[ "res://.import/tilset_02.png-82d24b57cc40eb68a3701c12e66b7e43.stex" ]
+source_file="res://src/Assets/icon.png"
+dest_files=[ "res://.import/icon.png-df304e81ff95ff821885b1d9789ee879.stex" ]
 
 [params]
 
